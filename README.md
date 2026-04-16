@@ -3,7 +3,7 @@
 A simple Python tool to convert images to ASCII ART.
 
 ```
-Usage: ascii.py [OPTIONS] FILEPATH
+Usage: ascii.py [OPTIONS] FILEPATH [FOLDER]
 
 Options:
   --low INTEGER      Enhance dark areas of the image
@@ -11,6 +11,22 @@ Options:
   --columns INTEGER  ASCII text width
   --inverse          Inverse colors
   --help             Show this message and exit.
+```
+
+## Animated GIFs
+
+If `FILEPATH` points to an animated GIF and a `FOLDER` argument is given,
+each frame is converted to ASCII and saved into that folder as
+`0001.txt`, `0002.txt`, `0003.txt`, ... The folder is created if needed.
+
+```
+ascii.py animation.gif frames/
+```
+
+Without the `FOLDER` argument the GIF is treated like any other image
+and only its first frame is printed to stdout.
+
+```
 
 
 

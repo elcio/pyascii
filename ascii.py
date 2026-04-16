@@ -22,7 +22,7 @@ def _frame_to_ascii(im, low=10, high=10, columns=80, inverse=False):
     height = height * columns // 2 // width
     width = columns
     im = im.resize((width, height))
-    pixels = [min(sum(i)//3, 254) for i in im.getdata()]
+    pixels = [min(sum(i)//3, 254) for i in im.get_flattened_data()]
     ascii = []
     while pixels:
         ascii.append(
